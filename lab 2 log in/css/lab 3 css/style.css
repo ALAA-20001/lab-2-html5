@@ -1,0 +1,26 @@
+body{
+background-color: black;
+
+
+}
+
+.word{
+    position:absolute;
+    top: 400px;
+    left:470px ;
+    color: azure;
+    font-family:'Roboto Condensed', sans-serif;
+    text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5); ;
+
+    
+}
+
+img{
+    position: relative;
+    top: 50px;
+    border: solid 4px rgb(150, 11, 11);
+    border-radius: 20px;
+    margin-left: 350px;
+
+
+}

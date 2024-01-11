@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation Example</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation Example</title>
+</head>
+<body>
+   <h1>Getlocation WatchPosition</h1>
+  <section id="section">
+    <button id="getLocation">Get geolocation</button>
+    <button id="clearLocation">Clear geolocation</button>
+
+  <script>
+   let getLocation = document.getElementById("getLocation");
+let clearLocation = document.getElementById("clearLocation");
+let id;
+let openedWindow;
+function getLoc() {
+  id = navigator.geolocation.watchPosition(showPos, handleErr, options);
+}
+
+function showPos(position) {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+  openedWindow = window.open(
+    "http://maps.google.com/maps?q=" + lat + ",+" + long,
+    "openedWindow",
+    "height=400,width=400"
+  );
+}
+
+function stopWatch(id) {
+  navigator.geolocation.clearWatch(id);
+  openedWindow.close();
+}
+
+getLocation.addEventListener("click", () => {
+  getLoc();
+});
+
+clearLocation.addEventListener("click", () => {
+  stopWatch(id);
+});
+
+function handleErr(x) {
+  switch (x.code) {
+    case 0:
+      alert(x.message);
+      break;
+    case 1:
+      alert(x.message);
+      break;
+    case 2:
+      alert(x.message);
+      break;
+    case 3:
+      alert(x.message);
+      break;
+  }
+}
+
+let options = {
+  enableHighAccuracy: false,
+  timeout: Infinity,
+};
+</script>
+</body>
+</html>
